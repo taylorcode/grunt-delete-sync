@@ -1,0 +1,24 @@
+{
+  "name": "grunt-delete-sync",
+  "version": "0.0.1",
+  "description": "Syncs file deletion between two folders.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/taylorcode/grunt-delete-sync.git"
+  },
+  "keywords": [
+    "grunt",
+    "delete",
+    "sync"
+  ],
+  "author": "Taylor McIntyre <taylorsmcintyre@gmail.com> (http://www.taylorcode.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/taylorcode/grunt-delete-sync/issues"
+  },
+  "homepage": "https://github.com/taylorcode/grunt-delete-sync"
+}
