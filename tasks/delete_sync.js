@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
 
-  grunt.registerMultiTask('sync', 'Synchronize file deletion between two directories.', function() {
+  grunt.registerMultiTask('delete_sync', 'Synchronize file deletion between two directories.', function() {
 
     this.src.map(function(file){
       console.log(src);
