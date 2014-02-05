@@ -2,26 +2,15 @@ module.exports = function(grunt) {
 
   grunt.registerMultiTask('delete_sync', 'Synchronize file deletion between two directories.', function() {
 
-    this.src.map(function(file){
-      console.log(src);
+    this.files.map(function(file) {
+      file.src.map(function (val) {
+        var targetFileName = file.cwd + '/' + val;
+        if(grunt.file.isFile(targetFileName) && !grunt.file.exists(file.syncWith + '/' + val)) {
+          grunt.log.writeln('Deleting file ' + targetFileName);
+          grunt.file.delete(targetFileName);
+        }
+      });
     });
-
-
-  //   promise.all(this.files.map(function(fileDef) {
-  //     var cwd = fileDef.cwd ? fileDef.cwd : '.';
-  //     return promise.all(fileDef.src.map(function(src){
-  //       var dest = path.join(fileDef.dest, src);
-  //       // when using expanded mapping dest is the destination file
-  //       // not the destination folder
-  //       if(fileDef.orig.expand) {
-  //         dest = fileDef.dest;
-  //       }
-  //       return processPair(path.join(cwd, src), dest);
-  //     }));      
-  //   })).then(function(promises) {
-  //     promise.all(promises).then(done);
-  //   });
-  // });
-
+    
   });
 };
