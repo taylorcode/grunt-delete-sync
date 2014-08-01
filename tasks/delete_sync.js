@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     this.files.map(function(file) {
       file.src.map(function (val) {
         var targetFileName = file.cwd + '/' + val;
-        if(grunt.file.isFile(targetFileName) && !grunt.file.exists(file.syncWith + '/' + val)) {
+        if(grunt.file.exists(targetFileName) && !grunt.file.exists(file.syncWith + '/' + val)) {
           grunt.log.writeln('Deleting file ' + targetFileName);
           grunt.file.delete(targetFileName, options);
         }
